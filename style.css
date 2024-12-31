@@ -138,19 +138,13 @@ body {
 
 
 @media (max-width: 450px ) {
-    body {
-        background-size: cover; /* Bao phủ toàn bộ màn hình */
-        background-position: center center; /* Căn giữa hình nền */
-        background-repeat: no-repeat; /* Không lặp lại hình nền */
-        height: 100vh; /* Chiều cao của phần tử body là 100% chiều cao màn hình */
-        margin: 0; /* Loại bỏ margin mặc định */
-        padding: 0; /* Loại bỏ padding mặc định */
-    }
+    
 
     #spin-button{
         width: 110px;
         height: 110px;
         font-size: 1.5rem;
+        transform: translate(-50%, -40%);
         
     }
 
