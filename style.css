@@ -199,6 +199,16 @@ body {
         object-fit: contain;
         transform: translate(-67%, -1.5%); /* Căn giữa ảnh */
     }
+
+    .overlay {
+        height: 100vh; /* Đảm bảo overlay chiếm toàn bộ chiều cao màn hình */
+    }
+
+    #overlay img {
+        width: 100%;
+        height: 100vh; /* Đảm bảo ảnh phủ toàn bộ chiều cao màn hình */
+        object-fit: cover; /* Đảm bảo ảnh không bị méo và phủ toàn bộ */
+    }
     
 }
 
