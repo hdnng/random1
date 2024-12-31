@@ -94,3 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
         slotMachine.style.opacity = 0;
     });
 });
+
+// Lấy giá trị background-position của body
+const body = document.querySelector('body');
+const spinButton = document.getElementById('spin-button');
+
+// Hàm cập nhật vị trí nút "Start" theo background-position
+function updateButtonPosition() {
+    const backgroundPosition = window.getComputedStyle(body).getPropertyValue('background-position');
+    const [x, y] = backgroundPosition.split(' ');
+
+    // Chuyển giá trị background-position từ phần trăm sang pixel (dựa trên kích thước của body)
+    const xPos = parseFloat(x) / 100 * window.innerWidth;
+    const yPos = parseFloat(y) / 100 * window.innerHeight;
+
+    // Cập nhật vị trí của nút "Start"
+    spinButton.style.left = `${xPos}px`;
+    spinButton.style.top = `${yPos}px`;
+}
+
+// Gọi hàm để cập nhật vị trí nút khi trang được tải
+window.addEventListener('load', updateButtonPosition);
+
+// Gọi hàm mỗi khi background-position thay đổi (nếu cần thiết)
+window.addEventListener('resize', updateButtonPosition);
+
