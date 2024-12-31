@@ -202,12 +202,20 @@ body {
 
     .overlay {
         height: 100vh; /* Đảm bảo overlay chiếm toàn bộ chiều cao màn hình */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+        z-index: 1000;
+        left: 35%;
     }
 
     #overlay img {
-        width: 100%;
-        height: 100vh; /* Đảm bảo ảnh phủ toàn bộ chiều cao màn hình */
+        width: 30%;
+        height: auto; /* Đảm bảo ảnh phủ toàn bộ chiều cao màn hình */
         object-fit: cover; /* Đảm bảo ảnh không bị méo và phủ toàn bộ */
+        
+        
+        
     }
     
 }
