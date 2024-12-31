@@ -131,3 +131,35 @@ body {
 #slot-machine {
     opacity: 0;
 }
+
+
+@media (max-width: 450px ) {
+
+    #spin-button{
+        width: 110px;
+        height: 110px;
+        font-size: 1.5rem;
+    }
+
+    #spin-button::before {
+        font-size: 1.5rem;
+    }
+
+    .slot-machine {
+        width: 246.2px;  /* Thay đổi kích thước khung quay */
+        height: 275px;
+    }
+
+    .item {
+        width: 250px;  /* Thay đổi kích thước mỗi ảnh để hiển thị đầy đủ */
+        height: auto;
+    }
+
+    .item img {
+        width: 70%;
+        height: auto;
+        object-fit: contain;
+        transform: translate(-21.2%, -2%); /* Căn giữa ảnh */
+    }
+    
+}
