@@ -167,3 +167,38 @@ body {
     }
     
 }
+
+@media (max-width: 850px ) {
+    
+
+    #spin-button{
+        width: 80px;
+        height: 80px;
+        font-size: 1rem;
+        transform: translate(-50%, -30%);
+        
+    }
+
+    #spin-button::before {
+        font-size: 1rem;
+    }
+
+    .slot-machine {
+        width: 150px;  /* Thay đổi kích thước khung quay */
+        height: 170px;
+    }
+
+    .item {
+        width: 150px;  /* Thay đổi kích thước mỗi ảnh để hiển thị đầy đủ */
+        height: auto;
+    }
+
+    .item img {
+        width: 42.6%;
+        height: auto;
+        object-fit: contain;
+        transform: translate(-67%, -1.5%); /* Căn giữa ảnh */
+    }
+    
+}
+
