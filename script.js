@@ -45,39 +45,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     spinButton.addEventListener('click', () => {
         if (isSpinning) return;
-
+    
         // Ẩn nút "START" khi bắt đầu quay
         spinButton.style.display = 'none';
         slotMachine.style.opacity = 1;
-
+    
         isSpinning = true;
-
+    
         // Lấy chỉ số sản phẩm trúng thưởng dựa trên phần trăm
         const randomIndex = getRandomProductIndex();
-        const targetPosition = -(randomIndex * itemWidth); // Vị trí cần dừng
-
+    
+        // Tính toán vị trí cần dừng sao cho sản phẩm nằm chính giữa
+        const slotMachineWidth = slotMachine.offsetWidth;
+        const centerOffset = (slotMachineWidth - itemWidth) / 2;
+        const targetPosition = -(randomIndex * itemWidth) + centerOffset;
+    
         // Tạo vòng quay dài hơn để tạo hiệu ứng
         const extraSpin = -(totalItems * (repeatCount - 1) * itemWidth);
         const finalPosition = extraSpin + targetPosition;
-
+    
         // Thêm hiệu ứng quay
         items.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
         items.style.transform = `translateX(${finalPosition}px)`;
-
+    
         // Dừng quay và hiển thị kết quả
         setTimeout(() => {
             isSpinning = false;
-
+    
             // Reset vị trí để lặp lại
             items.style.transition = 'none';
             items.style.transform = `translateX(${targetPosition}px)`;
-
+    
             // Hiển thị kết quả
             const selectedProduct = products[randomIndex];
             resultImg.src = selectedProduct.img;
-            resultName.textContent = selectedProduct.name;
-            resultDescription.textContent = selectedProduct.description;
-
+            
+    
             // Đợi 1,5 giây rồi mới hiển thị overlay
             setTimeout(() => {
                 overlay.classList.remove('hidden');
