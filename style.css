@@ -138,6 +138,9 @@ body {
 
 
 @media (max-width: 450px ) {
+    body {
+        background-size: cover; /* Đảm bảo hình nền bao phủ đầy đủ màn hình */
+    }
 
     #spin-button{
         width: 110px;
